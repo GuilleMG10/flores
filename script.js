@@ -2,7 +2,7 @@ function createFlower() {
     const flowerContainer = document.querySelector(".flower-container");
 
     // Número máximo de flores en pantalla
-    const maxFlowersOnScreen = 15;
+    const maxFlowersOnScreen = 30;
 
     // Verificar si ya hay 10 flores en pantalla
     if (document.querySelectorAll(".flower").length >= maxFlowersOnScreen) {
@@ -10,7 +10,7 @@ function createFlower() {
     }
 
     // Número máximo de flores a crear simultáneamente (entre 1 y 5)
-    const maxFlowers = Math.ceil(Math.random() * 5 + 1);
+    const maxFlowers = Math.ceil(Math.random() * 8 + 1);
     const flowerSize = 100; // Tamaño de la flor
 
     // Arrays para almacenar las posiciones de las flores existentes
@@ -50,7 +50,7 @@ function createFlower() {
             flower.appendChild(petal);
 
             // Tiempo aleatorio de desaparición entre 2 y 5 segundos
-            const disappearanceTime = Math.random() * 3000 + 2000;
+            const disappearanceTime = Math.random() * 5000 + 2000;
 
             // Agrega una animación de salida a los pétalos con el tiempo aleatorio de desaparición
             petal.style.animation = `fadeOutPetal 0.5s ease-in-out both ${i * 0.1}s, fadeOutFlower 0.5s ease-in-out both ${disappearanceTime}s`;
@@ -63,7 +63,7 @@ function createFlower() {
         flowerContainer.appendChild(flower);
 
         // Tiempo aleatorio de desaparición entre 2 y 5 segundos
-        const disappearanceTime = Math.random() * 3000 + 2000;
+        const disappearanceTime = Math.random() * 5000 + 2000;
 
         setTimeout(() => {
             flowerContainer.removeChild(flower);
